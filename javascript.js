@@ -35,7 +35,7 @@ $(document).ready(function() {
         if($("#audio__sec1").get(0).paused)
         {
             $('#audio__sec1').trigger("play");
-            $('#audio__sec1').animate({volume: 1}, 1000);
+            $('#audio__sec1').animate({volume: 0.5}, 1000);
         } else {
             $('#audio__sec1').animate({volume: 0}, 1000);
             setTimeout(function () {
@@ -53,7 +53,7 @@ $(document).ready(function() {
         if($("#audio__sec2").get(0).paused)
         {
             $('#audio__sec2').trigger("play");
-            $('#audio__sec2').animate({volume: 1}, 1000);
+            $('#audio__sec2').animate({volume: 0.5}, 1000);
         } else {
             $('#audio__sec2').animate({volume: 0}, 1000);
             setTimeout(function () {
