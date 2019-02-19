@@ -23,9 +23,44 @@
 
 
 $(document).ready(function() {
+    $('html, body').stop().animate({
+        scrollTop: 0
+    }, 700);
     var section_actual = "0";
     var target = "";
     var scroll_flag = false;
+
+    $( "#audio__logo-sec1" ).click(function() {
+        if($("#audio__sec1").get(0).paused)
+        {
+            $('#audio__sec1').trigger("play");
+            $('#audio__sec1').animate({volume: 1}, 1000);
+        } else {
+            $('#audio__sec1').animate({volume: 0}, 1000);
+            setTimeout(function () {
+                $('#audio__sec1').trigger("pause");
+            }, 1000);
+           
+            
+        }
+        
+    });
+
+    $( "#audio__logo-sec2" ).click(function() {
+        if($("#audio__sec2").get(0).paused)
+        {
+            $('#audio__sec2').trigger("play");
+            $('#audio__sec2').animate({volume: 1}, 1000);
+        } else {
+            $('#audio__sec2').animate({volume: 0}, 1000);
+            setTimeout(function () {
+                $('#audio__sec2').trigger("pause");
+            }, 1000);
+        }
+        
+    });
+
+
     $(window).bind('mousewheel', function(e){
         event.preventDefault();
         if(!scroll_flag)
@@ -54,6 +89,15 @@ $(document).ready(function() {
                     target = $("#"+section_actual);
                     if( target.length ) {
                         
+                        $('#audio__sec1').animate({volume: 0}, 1000);
+                        setTimeout(function () {
+                            $('#audio__sec1').trigger("pause");
+                        }, 1000);
+                        $('#audio__sec2').animate({volume: 0}, 1000);
+                        setTimeout(function () {
+                            $('#audio__sec2').trigger("pause");
+                        }, 1000);
+
                         $('html, body').stop().animate({
                             scrollTop: target.offset().top
                         }, 700);
@@ -86,6 +130,15 @@ $(document).ready(function() {
                     target = $("#"+section_actual);
                     if( target.length ) {
                         
+                        $('#audio__sec1').animate({volume: 0}, 1000);
+                        setTimeout(function () {
+                            $('#audio__sec1').trigger("pause");
+                        }, 1000);
+                        $('#audio__sec2').animate({volume: 0}, 1000);
+                        setTimeout(function () {
+                            $('#audio__sec2').trigger("pause");
+                        }, 1000);
+
                         $('html, body').stop().animate({
                             scrollTop: target.offset().top
                         }, 700);

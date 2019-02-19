@@ -59,6 +59,10 @@
               <video muted autoplay loop class="section__video">
                 <source src="video/waves.mp4" type="video/ogg">
               </video>
+
+              <div class="section__sound__logo-box">
+                <img id="audio__logo-sec1" src="img/sound.png" alt="logo-box" class="section__sound__logo">
+            </div>
         </div>
 
         <div id="sec2" class="section">
@@ -66,8 +70,18 @@
                 <video muted autoplay loop class="section__video">
                   <source src="video/mountain.mp4" type="video/ogg">
                 </video>
+                <div class="section__sound__logo-box">
+                    <img id="audio__logo-sec2" src="img/sound.png" alt="logo-box" class="section__sound__logo">
+                </div>
         </div>
 
+        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+        <audio id="audio__sec1" loop>
+            <source src="music/waves.mp3" type="audio/mp3">
+        </audio>
+        <audio id="audio__sec2" loop>
+            <source src="music/mishlawi.mp3" type="audio/mp3">
+        </audio>
         
         
     </body>
