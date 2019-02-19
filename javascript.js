@@ -31,6 +31,7 @@ $(document).ready(function() {
     var scroll_flag = false;
 
     $( "#audio__logo-sec1" ).click(function() {
+        var elem = document.getElementById("audio__sec1");
         if($("#audio__sec1").get(0).paused)
         {
             $('#audio__sec1').trigger("play");
@@ -39,6 +40,7 @@ $(document).ready(function() {
             $('#audio__sec1').animate({volume: 0}, 1000);
             setTimeout(function () {
                 $('#audio__sec1').trigger("pause");
+                elem.currentTime = 0;
             }, 1000);
            
             
@@ -47,6 +49,7 @@ $(document).ready(function() {
     });
 
     $( "#audio__logo-sec2" ).click(function() {
+        var elem = document.getElementById("audio__sec2");
         if($("#audio__sec2").get(0).paused)
         {
             $('#audio__sec2').trigger("play");
@@ -55,6 +58,7 @@ $(document).ready(function() {
             $('#audio__sec2').animate({volume: 0}, 1000);
             setTimeout(function () {
                 $('#audio__sec2').trigger("pause");
+                elem.currentTime = 0;
             }, 1000);
         }
         
@@ -72,6 +76,8 @@ $(document).ready(function() {
                 {
                     target = $("#sec0");
                     section_actual = "sec0";
+                    $('#audio__sec0').trigger("play");
+                    $('#audio__sec0').animate({volume: 1}, 1000);
                 }else{
                     var number_section = section_actual.substring(3,4);
                     console.log("first part");
@@ -89,14 +95,19 @@ $(document).ready(function() {
                     target = $("#"+section_actual);
                     if( target.length ) {
                         
+                        var elem = document.getElementById("audio__sec1");
                         $('#audio__sec1').animate({volume: 0}, 1000);
                         setTimeout(function () {
                             $('#audio__sec1').trigger("pause");
+                            elem.currentTime=0;
                         }, 1000);
+                        var elem = document.getElementById("audio__sec2");
                         $('#audio__sec2').animate({volume: 0}, 1000);
                         setTimeout(function () {
                             $('#audio__sec2').trigger("pause");
+                            elem.currentTime=0;
                         }, 1000);
+                        
 
                         $('html, body').stop().animate({
                             scrollTop: target.offset().top
@@ -130,13 +141,26 @@ $(document).ready(function() {
                     target = $("#"+section_actual);
                     if( target.length ) {
                         
+                        
+                        $('#audio__sec0').animate({volume: 0}, 1000);
+                        setTimeout(function () {
+                            var elem = document.getElementById("audio__sec0");
+                            $('#audio__sec0').trigger("pause");
+                            elem.currentTime=0;
+                        }, 1000);
+                        
                         $('#audio__sec1').animate({volume: 0}, 1000);
                         setTimeout(function () {
+                            var elem = document.getElementById("audio__sec1");
                             $('#audio__sec1').trigger("pause");
+                            elem.currentTime=0;
                         }, 1000);
+                        
                         $('#audio__sec2').animate({volume: 0}, 1000);
                         setTimeout(function () {
+                            var elem = document.getElementById("audio__sec2");
                             $('#audio__sec2').trigger("pause");
+                            elem.currentTime=0;
                         }, 1000);
 
                         $('html, body').stop().animate({
