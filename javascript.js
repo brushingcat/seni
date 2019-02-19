@@ -26,6 +26,14 @@ $(document).ready(function() {
     $('html, body').stop().animate({
         scrollTop: 0
     }, 700);
+
+    $("#audio__sec0").ready(function() {
+        var media = document.getElementById("audio__sec0");
+        media.play();
+    });
+    
+    console.log("deve dar em MAC v2");
+
     var section_actual = "0";
     var target = "";
     var scroll_flag = false;
