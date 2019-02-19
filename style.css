@@ -20,7 +20,7 @@ body {
     /* Serve para se definirmos a height com 100px vai ser isso
     e não ser influenciado pelo padding */
     box-sizing: border-box;
-    /**overflow: hidden;**/
+    overflow: hidden;
 }
 
 
